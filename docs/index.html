@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+      <div id="div_relogio"> </div>
+</body>
+<script>
+    function relogio(){
+        var data = new Date();
+        var hr = data.getHours();
+        var min = data.getMinutes();
+        var s = data.getSeconds();
+
+        if(hr<10){
+            hr="0"+hr;
+        }
+        if(min<10){
+            min="0"+min;
+        }
+        if(s<10){
+            s="0"+s;
+        }
+        var tempo_total = hr + ":" + min + ":" + s;
+        var tempo = window.document.getElementById ("div_relogio");
+        tempo.innerHTML = tempo_total;
+    }
+    setInterval(relogio,500);
+</script>
+</html>
